@@ -35,6 +35,8 @@
         paging: false,
         ordering:true,
         info:false,
+        responsive:true,
+        
         language: {
     "search": "Filter: Enter a community or street name to filter this list."
   },
@@ -58,15 +60,15 @@
 
 
       $('.content').on('click', '#responsive-main-table1 tbody tr td.toggler' ,function (e) {
+   
         $('.child-'+$(this).attr('data-road-closure')).toggle();
         var dateVal =  $(this).attr('closure_date');
         var intersection =  $(this).attr('closure_intersection');
      var table = $('#responsive-main-table1').DataTable();
  
    var tr = $(this).closest('tr');
-   
-        var row = table.row( tr );
  
+        var row = table.row( tr );
         if ( row.child.isShown() ) {
             // This row is already open - close it
             row.child.hide();
@@ -84,12 +86,12 @@
   function format ( dateVal ,intersection) {
     // `d` is the original data object for the row
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-        '<tr colspan="4">'+
+        `<tr id=${Date.now()} colspan="4">`+
             '<td>Closed:</td>'+
             '<td>'+dateVal+'</td>'+
             
         '</tr>'+
-        '<tr colspan="4">'+
+        `<tr id=${Date.now() + 1} colspan="4">`+
             '<td>Between:</td>'+
             '<td>'+intersection+'</td>'+
         '</tr>'
