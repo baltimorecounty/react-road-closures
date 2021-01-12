@@ -10,12 +10,9 @@ const RoadClosingHeaders = props => {
     <TableHead>
       <TableRow>
         <TableHeadCell key="BlankHeader"></TableHeadCell>
-        <TableHeadCell key="FirstNameHeader"></TableHeadCell>
+        <TableHeadCell key="FirstNameHeader">Road</TableHeadCell>
         <TableHeadCell key="LastNameHeader">Community</TableHeadCell>
         <TableHeadCell key="PositionHeader">Reason</TableHeadCell>
-        {/* <TableHeadCell key="FirstNameHeader1">Road</TableHeadCell>
-        <TableHeadCell key="LastNameHeader2">Community</TableHeadCell>
-        <TableHeadCell key="PositionHeader3">Reason</TableHeadCell> */}
       </TableRow>
     </TableHead>
   );

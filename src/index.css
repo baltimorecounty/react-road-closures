@@ -18,9 +18,13 @@ td.toggler {
 tr.details td.toggler {
   background: url("./resource/details_close.png") no-repeat center center;
 }
-
+.dataTables_filter{
+  text-align:left;
+}
 .dataTables_filter input {
-  width: 50px;
+  width: 150px;
+  float:none;
+  text-align: left;
 }
 .dataTables_info {
   margin-top: 12px;

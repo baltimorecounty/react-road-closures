@@ -7,9 +7,6 @@ import {
 } from "@baltimorecounty/dotgov-components";
 import RoadClosingIcon from "./RoadClosingIcon";
 
-const divStyles1 = {
-  paddingLeft: "150px"
-};
 
 const RoadClosingRows = props => {
   const { data } = props;
@@ -20,7 +17,7 @@ const RoadClosingRows = props => {
         <td
           key={`tdIcon-${i}`}
           className="toggler"
-          data-prod-cat={i}
+          data-road-closure={i}
           closure_date={item["attributes"]["FIRST_ROAD_CLOSURE_DATE"]}
           closure_intersection={item["attributes"]["FIRST_INTERSECTIONLIST"]}
         ></td>

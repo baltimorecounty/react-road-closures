@@ -33,10 +33,9 @@ const RoadClosingsPage = props => {
       </p>
     );
   } else {
-    // console.log("in else");
-    // console.log("closing---:" + closings);
+
     const { records = [] } = closings;
-    // console.log("records---:" + records);
+
     return (
       <div className="dg_internal-template">
         <div className="container">
@@ -51,7 +50,7 @@ const RoadClosingsPage = props => {
                 {ReactHtmlParser(informationAbout)}
                 {ReactHtmlParser(programHeader)} */}
                   <RoadClosingTable
-                    id="responsive-main-table"
+                    id="responsive-main-table1"
                     className="display"
                   >
                     <RoadClosingHeaders />
