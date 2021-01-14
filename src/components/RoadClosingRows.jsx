@@ -12,7 +12,7 @@ const RoadClosingRows = props => {
   const { data } = props;
 
   return data.features.map((item, i) => (
-    <React.Fragment>
+    
       <TableRow key={`tr-${i}`} id={i}>
         <td
           key={`tdIcon-${i}`}
@@ -31,7 +31,6 @@ const RoadClosingRows = props => {
           {item["attributes"]["FIRST_CLOSURE_TYPE"]}
         </TableCell>
       </TableRow>
-    </React.Fragment>
   ));
 };
 
