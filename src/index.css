@@ -22,10 +22,14 @@ tr.details td.toggler {
   text-align:left;
 }
 .dataTables_filter input {
-  width: 150px;
+  width: 0px;
   float:none;
   text-align: left;
 }
 .dataTables_info {
   margin-top: 12px;
+}
+.dataTables_wrapper .dataTables_filter {
+  float: left; 
+  text-align: left; 
 }

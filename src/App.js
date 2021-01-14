@@ -1,4 +1,4 @@
- //import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
+//import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
 import React from "react";
 import { Run } from "./startup";
 import RoadClosingPage from "./components/RoadClosingPage";
@@ -6,7 +6,6 @@ import RoadClosingPage from "./components/RoadClosingPage";
 Run();
 
 function App() {
-
   return <RoadClosingPage />;
 }
 
