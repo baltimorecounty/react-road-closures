@@ -20,20 +20,18 @@ const RoadClosingsPage = (props) => {
   } else {
     return (
       <div className="dg_internal-template">
-        <div className="container">
-          {isLoading ? (
-            <p>{`Loading Road Closure Information...`}</p>
-          ) : (
-            <div id="dg_main-content">
-              <RoadClosingTable>
-                <RoadClosingHeaders />
-                <TableBody>
-                  <RoadClosingRows data={closings} />
-                </TableBody>
-              </RoadClosingTable>
-            </div>
-          )}
-        </div>
+        {isLoading ? (
+          <p>{`Loading Road Closure Information...`}</p>
+        ) : (
+          <div id="dg_main-content">
+            <RoadClosingTable>
+              <RoadClosingHeaders />
+              <TableBody>
+                <RoadClosingRows data={closings} />
+              </TableBody>
+            </RoadClosingTable>
+          </div>
+        )}
       </div>
     );
   }
