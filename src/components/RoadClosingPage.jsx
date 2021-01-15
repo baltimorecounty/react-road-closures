@@ -6,6 +6,7 @@ import RoadClosingHeaders from "./RoadClosingHeaders";
 import RoadClosingRows from "./RoadClosingRows";
 import RoadClosingSideBar from "./RoadClosingSideBar";
 import $ from "jquery";
+import DataTable from "datatables.net";
 // import ReactHtmlParser from "react-html-parser";
 import { TableBody } from "@baltimorecounty/dotgov-components";
 import testData from "../data/test.json";
@@ -21,21 +22,23 @@ const RoadClosingsPage = props => {
   //   informationAbout
   // } = window.closings;
   useEffect(() => {
+   
     window.scrollTo(0, 0);
     // Runs after the first render() lifecycle
-
     //initialize datatable
     $(document).ready(function() {
-      if (!$.fn.dataTable.isDataTable("#responsive-main-table1")) {
+     // $.noConflict();
+  
         console.log("there is true--");
-        $("#responsive-main-table1").DataTable({
+        var $responsiveTable = $("#responsive-main-table1");
+        $responsiveTable.DataTable({
           responsive: true,
           paging: false,
           ordering: true,
           searcing: true,
           info: false,
           language: {
-            // searchPlaceholder: "Community or Street Name",
+            searchPlaceholder: "Community or Street Name",
             search:
               "Filter: Enter a community or street name to filter this list."
           },
@@ -48,9 +51,7 @@ const RoadClosingsPage = props => {
             }
           ]
         });
-      } else {
-        console.log("false-----");
-      }
+ 
     });
   }, [closings]);
   // console.log("data:" + JSON.stringify(data));
