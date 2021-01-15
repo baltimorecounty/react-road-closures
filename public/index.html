@@ -1,127 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-   
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script> 
-    <script type="text/javascript" src ="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js" ></script>
-
-    <script type="text/javascript"  src ="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
-
-   
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
-
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
-
-  
-      //==================
-
-      //these gives you error on console and onclick does not work
-       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script src="https://dev.baltimorecountymd.gov/sebin/f/x/jquery.dataTables.js"></script>
-     
-    <script src="https://dev.baltimorecountymd.gov/sebin/f/h/dataTables.responsive.js"></script>
-  <script src="https://dev.baltimorecountymd.gov/sebin/l/s/dotgov-responsivetable.min.js"></script>
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
- 
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-    
-      
-    
-      <link
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+   
+
+    <link
       rel="stylesheet"
       type="text/css"
-       href="https://dev.baltimorecountymd.gov/sebin/j/f/dotgov.min.css"/> 
-
-      
-    <script type="text/javascript">
-    $(document).ready(function() {
-  $('.dataTables_filter').css(
-     {'text-align':'left'}
-  );
-  $('.dataTables_filter input[type="search"]').css(
-     {'width':'500px','display':'inline-block'}
-  );
- 
-
-
-      $('.content').on('click', '#responsive-main-table1 tbody td.toggler' ,function (e) {
-   
-        $('.child-'+$(this).attr('data-road-closure')).toggle();
-        var dateVal =  $(this).attr('closure_date');
-        var intersection =  $(this).attr('closure_intersection');
-   
-      
-      if (!$.fn.dataTable.isDataTable("#responsive-main-table1")) {
-        var table =   $("#responsive-main-table1").DataTable({ 
-          "paging": false, "searching":false,
-           responsive: true,
-          info: false,
-          order: [[1, "asc"]],
-          columnDefs: [
-            {
-              targets: 0,
-              orderable: false
-            }
-          ]
-       });
-      }
-      else{
-        var table =   $("#responsive-main-table1").DataTable();
-      }
-
- 
-   var tr = $(this).closest('tr');
- 
-        var row = table.row( tr );
-        if ( row.child.isShown() ) {
-            // This row is already open - close it
-            row.child.hide();
-            tr.removeClass('shown');
-        }
-        else {
-            // Open this row
-            
-           row.child( format(dateVal,intersection) ).show();
-            tr.addClass('shown');
-           
-       
-        }
-      });
-
-    });
-
-  function format ( dateVal ,intersection) {
-    // `d` is the original data object for the row
-    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-        `<tr id=${Date.now()} >`+
-            '<td>Closed:</td>'+
-            '<td>'+dateVal+'</td>'+
-            
-        '</tr>'+
-        `<tr id=${Date.now() + 1} >`+
-            '<td>Between:</td>'+
-            '<td>'+intersection+'</td>'+
-        '</tr>'
+      href="https://dev.baltimorecountymd.gov/sebin/j/f/dotgov.min.css"
+    /> 
     
-    '</table>';
-}
-
+    <script>
+      window.closings = {
+        programHeader: `<h2>Agency and Program Closings</h2>`,
+        informationHeader: `<h2>Real-Time Storm Information</h2>`,
+        informationAbout:
+          ` <ul>
+              <li>
+                The
+                <a
+                  title="Learn more about the Bureau of Highways Snow Center."
+                  href="http://www.baltimorecountymd.gov/snowfighter"
+                >
+                  Bureau of Highways Snow Center
+                </a>
+                is manned 24-hours-a-day during storms. The Snow
+                Center&nbsp;coordinates between&nbsp;plow crews, emergency
+                services and the community. The number at the Highways Snow
+                Center is&nbsp;410-887-3560.
+              </li>
+              <li>
+                The County's
+                <a
+                  title="View road closures."
+                  href="https://dev.baltimorecountymd.gov/departments/publicworks/roadclosures/index.html"
+                >
+                  Road Closures
+                </a>
+                application lists roads currently closed due to repairs,
+                accidents, weather or other hazards.
+              </li>
+            </ul>`,
+      };
+    </script>
  
-
-      </script> 
-   
-  </head>
+  </head> 
   <body>
-     <div id="root" class="content"></div>
-  
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="RoadClosure"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://kit.fontawesome.com/2475edd293.js"></script>
+
+    <script src="https://dev.baltimorecountymd.gov/sebin/j/v/dotgov-responsivetable-plugins.min.js"></script>
+    <script src="https://dev.baltimorecountymd.gov/sebin/l/s/dotgov-responsivetable.min.js"></script>
+    <script src="https://dev.baltimorecountymd.gov/sebin/z/m/dotgov-site.min.js"></script>
+
   </body>
  
+  </div>
 </html>

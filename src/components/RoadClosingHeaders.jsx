@@ -2,17 +2,20 @@ import React from "react";
 import {
   TableHead,
   TableHeadCell,
-  TableRow
+  TableRow,
 } from "@baltimorecounty/dotgov-components";
 
-const RoadClosingHeaders = props => {
+const RoadClosingHeaders = (props) => {
   return (
     <TableHead>
       <TableRow>
-        <TableHeadCell key="BlankHeader"></TableHeadCell>
-        <TableHeadCell key="FirstNameHeader">Road</TableHeadCell>
-        <TableHeadCell key="LastNameHeader">Community</TableHeadCell>
-        <TableHeadCell key="PositionHeader">Reason</TableHeadCell>
+        <TableHeadCell key="RoadHeader" className="order-by">
+          Road
+        </TableHeadCell>
+        <TableHeadCell key="CommunityHeader">Community</TableHeadCell>
+        <TableHeadCell key="ReasonHeader">Reason</TableHeadCell>
+        <TableHeadCell key="ClosedHeader">Closed</TableHeadCell>
+        <TableHeadCell key="IntersectionHeader">Intersection</TableHeadCell>
       </TableRow>
     </TableHead>
   );
