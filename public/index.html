@@ -25,10 +25,52 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-  </head>
+   
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://dev.baltimorecountymd.gov/sebin/j/f/dotgov.min.css"
+    /> 
+    
+    <script>
+      window.closings = {
+        programHeader: `<h2>Agency and Program Closings</h2>`,
+        informationHeader: `<h2>Real-Time Storm Information</h2>`,
+        informationAbout:
+          ` <ul>
+              <li>
+                The
+                <a
+                  title="Learn more about the Bureau of Highways Snow Center."
+                  href="http://www.baltimorecountymd.gov/snowfighter"
+                >
+                  Bureau of Highways Snow Center
+                </a>
+                is manned 24-hours-a-day during storms. The Snow
+                Center&nbsp;coordinates between&nbsp;plow crews, emergency
+                services and the community. The number at the Highways Snow
+                Center is&nbsp;410-887-3560.
+              </li>
+              <li>
+                The County's
+                <a
+                  title="View road closures."
+                  href="https://dev.baltimorecountymd.gov/departments/publicworks/roadclosures/index.html"
+                >
+                  Road Closures
+                </a>
+                application lists roads currently closed due to repairs,
+                accidents, weather or other hazards.
+              </li>
+            </ul>`,
+      };
+    </script>
+ 
+  </head> 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="RoadClosures"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +81,21 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://kit.fontawesome.com/2475edd293.js"></script>
+
+    <script src="https://dev.baltimorecountymd.gov/sebin/j/v/dotgov-responsivetable-plugins.min.js"></script>
+    <script src="https://dev.baltimorecountymd.gov/sebin/l/s/dotgov-responsivetable.min.js"></script>
+    <script src="https://dev.baltimorecountymd.gov/sebin/z/m/dotgov-site.min.js"></script>
+
+    <!-- <script src="/sebin/p/o/dojo.jquery.js"></script>
+<script src="//js.arcgis.com/3.9/"></script>
+<script type="text/javascript" src="/sebin/b/h/modernizer.min.js"></script>
+<script src="/sebin/p/a/jquery.placeholder.js "></script> -->
+
   </body>
+ 
+  </div>
 </html>
